@@ -35,13 +35,15 @@ public class ContactoController {
 	public Optional<ContactoModel> searchPersonalInfirmation(@PathVariable("id") Long id) {
 		return this.contactoService.searchPersonalInfirmation(id);
 	}
-	
-	@DeleteMapping(path="/{id}")
+
+	@DeleteMapping(path = "/{id}")
 	public String deletePersonalInformation(@PathVariable("id") Long id) {
-		boolean ok=this.contactoService.deletePersonalInformation(id);
-		if(ok) {
-			return "Cotancto  con ID eliminado: "+id;
-		}else {return "Contacto con ID no hallado: "+id;}
-	} 
-	
+		boolean ok = this.contactoService.deletePersonalInformation(id);
+		if (ok) {
+			return "Cotancto  con ID eliminado: " + id;
+		} else {
+			return "Contacto con ID no hallado: " + id;
+		}
+	}
+
 }
